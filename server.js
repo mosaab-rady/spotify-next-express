@@ -17,8 +17,10 @@ nextApp.prepare().then(() => {
   app.use(cors());
   app.options('*', cors());
 
-  const morgan = require('morgan');
-  app.use(morgan('dev'));
+  if (process.env.NODE_ENV === 'development') {
+    const morgan = require('morgan');
+    app.use(morgan('dev'));
+  }
 
   // parse json,cookie and url
   app.use(express.json({ limit: '10kb' }));

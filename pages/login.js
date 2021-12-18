@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-function login() {
+function Login() {
   const router = useRouter();
   const signIn = async () => {
     router.push('/api/login/spotify');
@@ -26,4 +26,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
